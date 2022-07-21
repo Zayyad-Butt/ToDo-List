@@ -1,0 +1,34 @@
+﻿@model ToDo_List.ViewModels.RolePermissionViewModel
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post" asp-action="EditPermission" class="container">
+
+    <div>
+        <div>
+            <h2>Edit Role Permissions</h2>
+        </div>
+        <div class="my-5">
+            @for (int i = 0; i < Model.Claims.Count; i++)
+            {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@Model.Claims[i].ClaimType" />
+                    <input type="hidden" asp-for="@Model.RoleId" />
+                    <input asp-for="@Model.Claims[i].IsSelected" class="form-check-input" />
+                    <label class="form-check-label" asp-for="@Model.Claims[i].IsSelected">
+                        @Model.Claims[i].ClaimType
+                    </label>
+                </div>
+            }
+        </div>
+        <div >
+            <input type="submit" value="Update" class="btn btn-primary" style="width:auto" />
+            <a class="btn btn-secondary" style="width:auto"
+               asp-action="ListRole">
+                Cancel
+            </a>
+
+        </div>
+    </div>
+
+</form>
+

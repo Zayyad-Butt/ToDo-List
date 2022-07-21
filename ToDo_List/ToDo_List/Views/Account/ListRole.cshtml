@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ToDo_List.ViewModels.ListRoleViewModel>
+@{
+    ViewBag.Title = "All Roles";
+}
+
+@if (Model.Any())
+{
+    <div style="background:white">
+<h1 class="container">All Roles</h1>
+    <table class="table container">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col" class="text-end">Actions</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+    @foreach (var role in Model)
+    {
+        
+        <tr>
+          <td>@role.Id</td>
+          <td>@role.RoleName</td>
+          <td><a class="text-decoration-none" asp-action="AssignRole" asp-route-roleId="@role.Id">
+                                Assign Role
+                            </a></td>     
+          <td>
+              <a class="text-decoration-none" asp-action="EditPermission" asp-route-roleId="@role.Id" >Edit Permission</a>
+          </td>
+        </tr>
+    }
+    </tbody>
+</table>
+</div>
+}
+
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No role added yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button below to create role
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-controller="Account" asp-action="AddRole">
+                Add new role
+            </a>
+        </div>
+    </div>
+}
+

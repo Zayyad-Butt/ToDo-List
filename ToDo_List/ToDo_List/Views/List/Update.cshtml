@@ -1,0 +1,28 @@
+﻿@model ToDo_List.ViewModels.TaskList
+<h2>Update ToDo List</h2>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <form class="col-sm-8" method="post" asp-action="Update">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3 form-group">
+            <label asp-for="ID" class="form-label"></label>
+            <input value="@Model.ID" asp-for="ID" type="text"  class="form-control" readonly>
+            <span asp-validation-for="ID" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="TaskName" class="form-label"></label>
+            <input value="@Model.TaskName" asp-for="TaskName" type="text" class="form-control" id="role">
+            <span asp-validation-for="TaskName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="Description" class="form-label"></label>
+            <input value="@Model.Description" asp-for="Description" type="text"  class="form-control" >
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    
+        <button type="submit" class="btn btn-success">Update</button>
+    </form>
+    <div class="col-sm-2"></div>
+</div>
+

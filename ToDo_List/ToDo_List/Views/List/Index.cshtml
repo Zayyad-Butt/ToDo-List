@@ -1,0 +1,23 @@
+﻿@model ToDo_List.ViewModels.TaskList
+<h2>ToDo List</h2>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <form class="col-sm-8" method="post" asp-action="Index">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3 form-group">
+            <label asp-for="TaskName" class="form-label"></label>
+            <input asp-for="TaskName" type="text" placeholder="Task Name" class="form-control" id="role">
+            <span asp-validation-for="TaskName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" type="text" placeholder="Task Description" class="form-control" id="role"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+    <div class="col-sm-2"></div>
+</div>
+

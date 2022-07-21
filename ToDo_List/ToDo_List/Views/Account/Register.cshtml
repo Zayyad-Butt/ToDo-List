@@ -1,0 +1,101 @@
+﻿@model ToDo_List.ViewModels.RegisterViewModel
+
+
+
+<div class="container" >
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5"><b>Sign Up</b></h5>
+            <form method="post">
+              <div class="form-floating mb-3">
+                <input asp-for="Username" class="form-control" placeholder="Username">
+                <label asp-for="Username" >Username</label>
+                <span asp-validation-for="Username" class="text-danger"></span>
+
+              </div>
+              <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" placeholder="Email">
+                <label asp-for="Email" >Email</label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+              </div>
+              <div class="form-floating mb-3">
+                <input asp-for="Password" class="form-control"  placeholder="Password">
+                <label asp-for="Password">Password</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+
+              </div> 
+              <div class="form-floating mb-3">
+                <input asp-for="ConfirmPassword" class="form-control"  placeholder="ConfirmPassword">
+                <label asp-for="ConfirmPassword">ConfirmPassword</label>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-primary btn-login text-uppercase fw-bold my-4" type="submit">Register</button>
+              </div>
+              <hr class="my-4">
+              <div asp-validation-summary="All" class="text-danger"></div>
+
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Register User</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post" asp-action="Register">
+    <div class="mb-3 form-group">
+        <label asp-for="Username" class="form-label"></label>
+        <input asp-for="Username"  placeholder="Username" class="form-control" id="username">
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="mb-3 form-group">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email"  placeholder="Email" class="form-control" id="email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+   
+    
+    <div class="mb-3 form-group">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="mb-3 form-group">
+        <label asp-for="ConfirmPassword" class="form-label"></label>
+        <input asp-for="ConfirmPassword" type="password" placeholder="Confirm Password" class="form-control" id="exampleInputPassword2">
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>*@

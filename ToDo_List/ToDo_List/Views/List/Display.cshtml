@@ -1,0 +1,38 @@
+﻿@model List<ToDo_List.ViewModels.TaskList>
+
+
+@if (Model.Any())
+{
+    <h1 class="container">All Roles</h1>
+    <table class="table container">
+      <thead>
+        <tr>
+
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col" >Description</th>
+          <th scope="col">Actions</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+    @foreach (var l in Model)
+    {  
+        <tr>
+          <td>@l.ID</td>
+          <td>@l.TaskName</td>
+          <td>@l.Description</td>
+          <td>
+              <a class="btn btn-warning" asp-route-taskId="@l.ID" asp-action="Update">Update</a>
+              <a class="btn btn-danger" asp-route-taskId="@l.ID" asp-action="Delete">Delete</a>
+          </td>
+        </tr>
+        
+    }
+    </tbody>
+</table>
+}
+else{
+    <h2 style="color:maroon">There is not any task to display</h2>
+}
+

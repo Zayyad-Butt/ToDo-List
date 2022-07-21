@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityUser>
+@{
+    ViewBag.Title = "All Users";
+}
+@if (Model.Any())
+{
+    <div style="background:white">
+<h1>All Users</h1>
+<a class="btn btn-primary mb-3" style="width:auto"
+   asp-controller="Account" asp-action="Register">
+    Add new user
+
+</a>
+
+    <table class="table container">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+
+    @foreach (var user in Model)
+    {
+        
+        <tr>
+          <td>@user.Id</td>
+          <td>@user.UserName</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+</div>
+    
+}
+
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No user added yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button below to create user
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-controller="Account" asp-action="Register">
+                Add new user
+
+            </a>
+        </div>
+    </div>
+}
+
